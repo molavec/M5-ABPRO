@@ -1,0 +1,268 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+        <!-- meta data -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <!--font-family-->
+				<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+        
+        <!-- title of site -->
+        <title>Tecno Chile</title>
+
+        <!-- For favicon png -->
+				<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+       
+        <!--font-awesome.min.css-->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <!--linear icon css-->
+				<link rel="stylesheet" href="css/linearicons.css">
+		
+        <!--bootstrap.min.css-->
+				<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        
+        <!--style.css-->
+        <link rel="stylesheet" href="css/style.css">
+        
+        <!--responsive.css-->
+        <link rel="stylesheet" href="css/responsive.css">
+
+    </head>
+	
+	<body>		
+		<!--Header-->
+		<header class="mb-4">
+
+			<nav class="navbar fixed-top navbar-expand-lg p-3">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-6 col-md-8">
+							<!--logo-->
+							<a class="navbar-brand" href="index.html">Tecno Chile</a>
+						</div>
+						<div class="col-3 col-md-2">
+							<!--toggler menu responsive-->
+							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<!--menu-->
+							<div class="collapse navbar-collapse" id="navbarSupportedContent">
+								<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+									<li class="nav-item">
+										<a class="nav-link active" aria-current="page" href="index.html#home">Inicio</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link active" aria-current="page" href="index.html#products">Productos</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-3 col-md-2 p-2">
+							<div class="row">
+								<!--carrito imagen-->
+								<div class="col carrito">
+									<a 
+										href="#offcanvasCart"
+										data-bs-toggle="offcanvas" 
+										role="button" 
+										aria-controls="offcanvasCart"
+									>
+										<span class="lnr lnr-cart"></span>
+										<span id="cart-qty" class="badge badge-bg-1"></span>
+									</a>
+								</div>
+								<!--settings imagen-->
+								<div class="col setting">
+									<a 
+										href="admin.html" 
+										role="button" 
+									>
+										<span class="lnr lnr-cog"></span>
+										<span id="cart-qty" class="badge badge-bg-1"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+						
+						<!-- <div class="col">
+							<form class="d-flex" role="search">
+								<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+								<button class="btn btn-outline-success" type="submit">Search</button>
+							</form>
+						</div> -->
+					</div>
+					
+				</div>
+			</nav>
+
+		</header>
+
+		<section id="home">
+			
+			<div class="position-relative overflow-hidden text-left bg-light">
+				<div class="p-lg-5 mx-auto my-5">
+					<h1 class="display-4 fw-normal">Tecno Chile</h1>
+					<p class="lead fw-normal">Productos tecnológicos.</p>
+					<a class="btn-cart welcome-add-cart sofa-collection-btn text-center" href="#products">Ver Productos</a>
+				</div>
+				<div class="product-device shadow-sm d-none d-md-block"></div>
+				<div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+			</div>
+		</section>
+
+		<!--products start -->
+		<section id="products" class="feature">
+			<div class="container">
+
+				<div class="section-header">
+					<h2>Nuestros Productos</h2>
+				</div><!--/.section-header-->
+
+				<div class="container search-box">
+
+					<!-- filtro por texto -->
+					<div class="filter-text-box">
+						Buscar:
+						<input type="text" placeholder="Ingresa texto" id="searchTextProductInput">
+						<button id="searchTextProductButton" >buscar</button>
+					</div>
+
+					<!-- filtro por categotia -->
+					<div class="filter-category-box">
+						Categorias:
+						<select name="" id="filter-product-category" value="null">
+							<!-- llenar dinamicamente las opciones desde js -->
+							<option value="" selected disabled hidden>Choose here</option>
+							<!-- <option value="null" >Selecciona una categorias</option> -->
+							<option value=1>mesas</option>
+							<option value=2>sillas</option>
+							<!-- +56946608243 nico opazos -->
+						</select>
+					</div>
+
+					<!-- filtro por rango de precios -->
+					<div class="filter-rango-category-box">
+						<div class="row container">
+							<label>Rango de Precio</label>
+							<div class="col-md-2"><input class="form-control" type="number" name="cantidad" id="intMinimo" min="1" max="1000" placeholder="mínimo"></div>
+							<div class="col-md-2"><input class="form-control" type="number" name="cantidad" id="intMaximo" min="1" max="1000000" placeholder="máximo"></div>
+							<div class="col-md-2">
+								<button type="button"  class="btn btn-primary" id="btnRango">Buscar</button>
+							</div>
+						<div>
+					</div>
+
+				</div>
+
+				<br>
+
+				<!-- Lista de productos -->
+				<div class="feature-content">
+					<div class="row">
+						<!-- PRODUCTS GOES HERE -->
+					</div>
+				</div>
+
+			</div><!--/.container-->
+
+		</section>
+		<!--products end -->
+
+		<!-- offcanva cart start -->
+		<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+
+			<div class="offcanvas-header">
+				<h5 class="offcanvas-title" id="offcanvasCartLabel">Tus Productos</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+
+			<div class="offcanvas-body">				
+		
+				<!-- totalizador -->
+				<div id="totalizador" class="container" id="listaproductos">
+					<div class="cart-alert"></div>
+					<ul class="item-list">
+						<!-- items in cart here -->
+						<p>El carro está vacío.</p>
+					</ul>
+		
+					<hr>
+					
+					<div class="cart-alert"></div>
+
+					<div class="totales">
+						<p class="neto">Total Neto: <span id="total-neto">$ 0</span></p>
+						<p>IVA: <span id="iva">$ 0</span> </p>
+						<p>Total: <span id="total">$ 0</span> </p>
+						<p>Despacho: <span id="shipping">$ 0</span> </p>
+						<p>Total con despacho: <span id="total-with-shipping">$ 0</span>
+						</p>
+					</div>
+
+					<div class="container mt-3">
+						<button id="buy-cart" type="button" class="btn btn-primary">
+							Comprar
+						</button>
+						<button id="clean-cart" type="button" class="btn btn-secondary">
+							Limpiar Carro
+						</button>
+					</div>
+		
+				</div>
+			</div>
+		</div>
+		<!-- offcanva cart end -->
+
+		<!--footer start-->
+		<footer id="footer"  class="footer">
+			<div class="container">
+				<div class="hm-footer-copyright text-center">
+					<div class="footer-social">
+						<a href="#"><i class="fa fa-facebook"></i></a>	
+						<a href="#"><i class="fa fa-instagram"></i></a>
+						<a href="#"><i class="fa fa-linkedin"></i></a>
+						<a href="#"><i class="fa fa-pinterest"></i></a>
+						<a href="#"><i class="fa fa-behance"></i></a>	
+					</div>
+					<p>
+						Desarrollado por <a href="#">Tecno Chile</a>.
+					</p><!--/p-->
+				</div><!--/.text-center-->
+			</div><!--/.container-->
+
+			<div id="scroll-Top">
+				<div class="return-to-top">
+					<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+				</div>
+				
+			</div><!--/.scroll-Top-->
+			
+    </footer>
+		<!--footer end-->
+		
+		<!-- Include all js compiled plugins (below), or include individual files as needed -->
+
+		<!-- JQuery -->
+		<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        
+		<!--modernizr.min.js-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        
+		<!--Custom JS-->
+		<script type="module" src="js/index.js"></script>
+        
+    </body>
+	
+</html>
