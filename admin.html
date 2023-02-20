@@ -176,6 +176,50 @@
 			
 		</section>
 
+		<!-- offcanva cart start -->
+		<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+
+			<div class="offcanvas-header">
+				<h5 class="offcanvas-title" id="offcanvasCartLabel">Tus Productos</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+
+			<div class="offcanvas-body">				
+		
+				<!-- totalizador -->
+				<div id="totalizador" class="container" id="listaproductos">
+					<div class="cart-alert"></div>
+					<ul class="item-list">
+						<!-- items in cart here -->
+						<p>El carro está vacío.</p>
+					</ul>
+		
+					<hr>
+					
+					<div class="cart-alert"></div>
+
+					<div class="totales">
+						<p class="neto">Total Neto: <span id="total-neto">$ 0</span></p>
+						<p>IVA: <span id="iva">$ 0</span> </p>
+						<p>Total: <span id="total">$ 0</span> </p>
+						<p>Despacho: <span id="shipping">$ 0</span> </p>
+						<p>Total con despacho: <span id="total-with-shipping">$ 0</span>
+						</p>
+					</div>
+
+					<div class="container mt-3">
+						<button id="buy-cart" type="button" class="btn btn-primary">
+							Comprar
+						</button>
+						<button id="clean-cart" type="button" class="btn btn-secondary">
+							Limpiar Carro
+						</button>
+					</div>
+		
+				</div>
+			</div>
+		</div>
+		<!-- offcanva cart end -->
 
 		<!--footer start-->
 		<footer id="footer"  class="footer">
@@ -220,6 +264,7 @@
         
 		<!--Custom JS-->
 		<script type="module" src="js/index.js"></script>
+		<script type="module" src="js/cart.js"></script>
 
         
     </body>
