@@ -1,9 +1,30 @@
 class Inventory {
+
+  static instance = null;
+
   /**
    * @param {Array} products - Array of products
    */
-  constructor(products = []) {
-    this.products = products;
+  constructor() {
+    this.products = [];
+  }
+
+  /**
+   * get Inventory Sigleton
+   * @param {*} products a list of products 
+   * @returns Inventory
+   */
+  static getInventory() {
+    console.log('en getInventory');
+    
+    console.log(Inventory.instance);
+
+    if (!Inventory.instance){
+      Inventory.instance = new Inventory();
+    }
+
+    console.log(Inventory.instance);
+    return Inventory.instance;
   }
 
   /**
@@ -14,6 +35,16 @@ class Inventory {
   getProducts() {
     return this.products;
   }
+
+  /**
+   * Define el listado de productos
+   * 
+   * @param {Product[]} products arreglo de productos 
+   */
+  setProducts(products) {
+    this.products = products;
+  }
+
 
   /**
    * Obtain product by id
